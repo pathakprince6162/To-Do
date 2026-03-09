@@ -1,51 +1,85 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
 }
-.box{
+h1{
+    margin-top: 10px;
+    text-align: center;
+}
+body{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
+    background-color:#C7A1AF;
 }
-.box2 input{
+.container{
     margin-top: 30px;
-    height: 45px;
-    width: 400px;
-    border-radius: 9px 9px;
-    padding: 5px 5px;
-}
-.btn button{
-    font-size: large;
-    font-weight: 600;
-    border-radius: 9px 9px;
-    background-color: red;
-    margin-top: 35px;
-    margin-left: 20px;
-    height: 45px;
-    width: 50px;
-}
-
-.todo_add {
     display: flex;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    width: 450px;
+    border-radius: 12px 12px;
 }
-
-.todo_list {
-    margin-right: 28%;
+.todo-box{
+    width: 80%;
+     position: relative;
+     margin-top: 20px;
 }
-
-li {
-    margin-bottom: 20px;
+.todo-box input{
+    height: 40px;
+    width: 80%;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 62px;
+    border: none;
+   
+    background-color: azure;
+    font-size: 14px;
+    font-weight: 600;
+}
+#add-todo {
+    height: 40px;
+    width: 50px;
+    border: none;
+    background-color: orangered;
+    border-radius: 20px;
+    position: absolute;
+    right: 0px;
+}
+.ullist{
     margin-top: 20px;
-    button {
-        background-color: red;
-        border: 0;
-        font-size: 14px;
-        color: white;
-        margin-left: 10px;
-        padding: 10px;
-        border-radius: 10%;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    li{
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+}
+.removebtn{
+    height: 20px;
+    width: 35px;
+    margin-left: 30px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+#completedUlist{
+    text-decoration: line-through;
+    li{
+        margin-left: 40px;
+        padding-bottom: 5px;
+        font-size: 20px;
+        font-weight: 700;
     }
 }

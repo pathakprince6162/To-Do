@@ -1,25 +1,43 @@
-document.getElementById("add-btn").addEventListener("click",addTodo);
+const button = document.getElementById("add-todo").addEventListener("click",addTodo);
+const inputText = document.getElementById("todo-input");
 
 document.querySelector("ul").addEventListener("click",removeTodo)
+
+document.getElementById("completedUlist").addEventListener("click",undoTodo);
+
 function addTodo(e){
-     const tcon = document.getElementById("todo-input");
-     
-     const liCon = document.createElement("li")
-    liCon.textContent = tcon.value ;
+    const ullist = document.querySelector("ul")
+    const lilist = document.createElement("li");
+    
+    const removebtn = document.createElement("button")
+    removebtn.classList.add("removebtn")
+    removebtn.textContent = "X"
 
-    const ulCon = document.getElementById("parent-list")
-        const deletebtn = document.createElement("button")
-        deletebtn.textContent = "Delete"
+    lilist.textContent = inputText.value ;
 
-        liCon.appendChild(deletebtn)
-        ulCon.appendChild(liCon)
+    lilist.appendChild(removebtn);
+    ullist.appendChild(lilist);
 
-        tcon.value = ""
-        tcon.focus();
-
-
+    inputText.value = ""
+    inputText.focus();
 }
-
 function removeTodo(e){
-    e.target.parentNode.remove()
+    console.log("parent element " , e.target.tagName)
+    if (e.target.tagName == "BUTTON") {
+        const completeUllist = document.getElementById("completedUlist")
+        const completeLi = document.createElement("li");
+         const liChild = e.target.parentNode
+        e.target.textContent = "undo"
+        completeUllist.appendChild(liChild);
+    }
+}
+function undoTodo(e){
+        console.log("parent element", e.target.tagName)
+        if (e.target.tagName == "BUTTON") {
+                const ullist = document.querySelector("ul")
+             e.target.textContent = "X"
+            ullist.appendChild(e.target.parentNode)
+
+            
+        }
 }
